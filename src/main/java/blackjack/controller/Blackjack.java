@@ -2,11 +2,27 @@ package blackjack.controller;
 
 import blackjack.domain.Card;
 import blackjack.domain.Cards;
+import blackjack.domain.Dealer;
 import blackjack.domain.Player;
+import blackjack.util.RandomNumber;
+
+import java.util.Random;
 
 public class Blackjack {
 
     private static final Cards cards = new Cards();
+
+    private final RandomNumber randomNumber = new RandomNumber();
+
+    public void giveCards(Player player) {
+        int number = randomNumber.drawNumber();
+        player.addCard(drawCard(number));
+    }
+
+    public void giveCardsToDealer(Dealer dealer) {
+        int number = randomNumber.drawNumber();
+        dealer.addCard(drawCard(number));
+    }
 
     public Card drawCard(int index) {
         return cards.getCard(index);
