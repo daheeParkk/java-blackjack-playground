@@ -31,4 +31,12 @@ public class Player {
     public int getProfit() {
         return profit;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCards() {
+        return myCards.getCards();
+    }
 }

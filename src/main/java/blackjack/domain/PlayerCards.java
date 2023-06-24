@@ -13,4 +13,8 @@ public class PlayerCards {
     public int calculateResult() {
         return cards.stream().mapToInt(Card::getValue).sum();
     }
+
+    public String getCards() {
+        return cards.toString();
+    }
 }
