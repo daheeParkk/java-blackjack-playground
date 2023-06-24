@@ -12,7 +12,7 @@ public class BlackjackTest {
 
     @DisplayName("카드를 뽑는 함수 테스트")
     @ParameterizedTest
-    @CsvSource(value = {"1,ONE_DIAMOND","2,TWO_DIAMOND"}, delimiter = ',')
+    @CsvSource(value = {"1,ONE_DIAMOND","2,TWO_DIAMOND","10,ONE_HEART"}, delimiter = ',')
     public void DrawCard(int index, Card card) {
         Blackjack blackjack = new Blackjack();
         assertThat(blackjack.drawCard(index)).isEqualTo(card);
