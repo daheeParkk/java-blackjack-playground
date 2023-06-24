@@ -1,5 +1,6 @@
 package blackjack.view;
 
+import blackjack.domain.Dealer;
 import blackjack.domain.Player;
 import blackjack.message.ResultMessage;
 
