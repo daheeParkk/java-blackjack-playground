@@ -2,6 +2,7 @@ package blackjack;
 
 import blackjack.controller.Blackjack;
 import blackjack.domain.Card;
+import blackjack.domain.Player;
 import blackjack.domain.PlayerCards;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -28,5 +29,21 @@ public class BlackjackTest {
         daheeCards.addCard(blackjack.drawCard(firstIndex));
         daheeCards.addCard(blackjack.drawCard(secondIndex));
         assertThat(daheeCards.calculateResult()).isEqualTo(result);
+    }
+
+    @DisplayName("최종 이익을 계산하는 테스트")
+    @ParameterizedTest
+    @CsvSource(value = {"3,4","6,7"},delimiter = ',')
+    public void calculateFinalProfit(int one, int two) {
+        Blackjack blackjack = new Blackjack();
+        Player player1 = new Player("dahee", 10000);
+        Player player2 = new Player("poppi", 20000);
+        player1.addCard(blackjack.drawCard(one));
+        player2.addCard(blackjack.drawCard(two));
+
+        blackjack.calculateFinalProfit(player1, player2);
+
+        assertThat(player1.getProfit()).isEqualTo(-10000);
+        assertThat(player2.getProfit()).isEqualTo(20000);
     }
 }
