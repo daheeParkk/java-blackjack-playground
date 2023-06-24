@@ -24,3 +24,16 @@ git checkout main // 기본 브랜치가 main인 경우
 git checkout -b 브랜치이름
 ex) git checkout -b apply-feedback
 ```
+---
+## 블랙잭 구현 목록
+> #### Blackjack
+> - [ ] 랜덤 카드 꺼내오기
+> - [ ] 결과 계산하기
+> - [ ] 최종 수익 계산하기
+> #### InputView
+> - [ ] 이름 입력받기
+> - [ ] 배팅 금액 입력받기
+> - [ ] 추가 카드 받기 여부 입렵받기
+> #### OutputView
+> - [ ] 결과 출력하기
+> - [ ] 최종 수익 출력하기
