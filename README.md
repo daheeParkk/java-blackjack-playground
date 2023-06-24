@@ -27,7 +27,7 @@ ex) git checkout -b apply-feedback
 ---
 ## 블랙잭 구현 목록
 > #### Blackjack
-> - [ ] 랜덤 카드 꺼내오기
+> - [x] 랜덤 카드 꺼내오기
 > - [ ] 결과 계산하기
 > - [ ] 최종 수익 계산하기
 > #### InputView
