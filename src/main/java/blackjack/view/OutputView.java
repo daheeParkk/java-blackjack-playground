@@ -8,7 +8,7 @@ import static blackjack.message.ResultMessage.*;
 
 public class OutputView {
     public void giveCards(String name1, String name2) {
-        System.out.println("딜러와 "+name1+", "+name2 + FIRST_CARDS.getMessage());
+        System.out.println("딜러와 " + name1 + ", " + name2 + FIRST_CARDS.getMessage());
     }
 
     public void outputFirstResult(Dealer dealer, Player player1, Player player2) {
@@ -22,7 +22,7 @@ public class OutputView {
     }
 
     public void outputResult(Dealer dealer, Player player1, Player player2) {
-        System.out.println("딜러 카드 : " + dealer.getCards() +RESULT.getMessage() + dealer.calculateResult());
+        System.out.println("딜러 카드 : " + dealer.getCards() + RESULT.getMessage() + dealer.calculateResult());
         System.out.println(player1.getName() + "카드 : " + player1.getCards() + RESULT.getMessage() + player1.calculateResult());
         System.out.println(player2.getName() + "카드 : " + player2.getCards() + RESULT.getMessage() + player2.calculateResult());
     }
@@ -35,6 +35,6 @@ public class OutputView {
     }
 
     public void outputPlayerResult(Player player) {
-        System.out.println(player.getName() + "카드: "+ player.getCards());
+        System.out.println(player.getName() + "카드: " + player.getCards());
     }
 }

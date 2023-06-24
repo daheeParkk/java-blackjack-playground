@@ -27,17 +27,25 @@ public class Game {
         outputView.giveCards(player1.getName(), player2.getName());
         giveCards();
         outputView.outputFirstResult(dealer, player1, player2);
+        giveExtraCard();
+        outputResult();
+    }
+
+    private static void outputResult() {
+        outputView.outputResult(dealer, player1, player2);
+        blackjack.calculateFinalProfit(player1, player2);
+        outputView.outputFinalProfit(dealer, player1, player2);
+    }
+
+    private static void giveExtraCard() {
         inputExtraCard(player1);
         inputExtraCard(player2);
         takeCardDealer();
-        outputView.outputResult(dealer,player1,player2);
-        blackjack.calculateFinalProfit(player1,player2);
-        outputView.outputFinalProfit(dealer,player1,player2);
     }
 
     private static void takeCardDealer() {
         blackjack.giveCardsToDealer(dealer);
-        if(dealer.isCondition()) {
+        if (dealer.isCondition()) {
             outputView.giveCardToDealer();
             blackjack.giveCardsToDealer(dealer);
         }
@@ -66,7 +74,7 @@ public class Game {
     }
 
     private static void settingPlayer() {
-        playersNames =  playerView.inputPlayerNames();
+        playersNames = playerView.inputPlayerNames();
         playersBetAmounts.add(inputView.inputVetAmount(playersNames.get(0)));
         playersBetAmounts.add(inputView.inputVetAmount(playersNames.get(1)));
         player1 = new Player(playersNames.get(0), playersBetAmounts.get(0));

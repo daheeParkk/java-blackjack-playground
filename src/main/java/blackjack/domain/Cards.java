@@ -12,6 +12,6 @@ public class Cards {
     }
 
     public Card getCard(int index) {
-        return cards[index-1];
+        return cards[index - 1];
     }
 }

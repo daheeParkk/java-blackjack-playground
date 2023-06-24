@@ -1,9 +1,8 @@
 package blackjack.domain;
 
 public class Dealer {
-    private final PlayerCards myCards = new PlayerCards();
-
     private static final int profit = 10000;
+    private final PlayerCards myCards = new PlayerCards();
 
     public void addCard(Card card) {
         myCards.addCard(card);
@@ -22,6 +21,6 @@ public class Dealer {
     }
 
     public boolean isCondition() {
-        return calculateResult()<=16;
+        return calculateResult() <= 16;
     }
 }

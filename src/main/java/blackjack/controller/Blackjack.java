@@ -29,10 +29,10 @@ public class Blackjack {
     }
 
     public void calculateFinalProfit(Player player1, Player player2) {
-        checkMaxResult(player1,player2);
+        checkMaxResult(player1, player2);
 
-        if (!isCondition(player1)&&!isCondition(player2)) {
-            compareResult(player1,player2);
+        if (!isCondition(player1) && !isCondition(player2)) {
+            compareResult(player1, player2);
         }
     }
 

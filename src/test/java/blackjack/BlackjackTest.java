@@ -14,7 +14,7 @@ public class BlackjackTest {
 
     @DisplayName("카드를 뽑는 함수 테스트")
     @ParameterizedTest
-    @CsvSource(value = {"1,ONE_DIAMOND","2,TWO_DIAMOND","10,ONE_HEART"}, delimiter = ',')
+    @CsvSource(value = {"1,ONE_DIAMOND", "2,TWO_DIAMOND", "10,ONE_HEART"}, delimiter = ',')
     public void DrawCard(int index, Card card) {
         Blackjack blackjack = new Blackjack();
         assertThat(blackjack.drawCard(index)).isEqualTo(card);
@@ -22,7 +22,7 @@ public class BlackjackTest {
 
     @DisplayName("결과를 계산하는 테스트")
     @ParameterizedTest
-    @CsvSource(value = {"1,2,3","37,38,20"})
+    @CsvSource(value = {"1,2,3", "37,38,20"})
     public void calculateResult(int firstIndex, int secondIndex, int result) {
         Blackjack blackjack = new Blackjack();
         PlayerCards daheeCards = new PlayerCards();
@@ -33,7 +33,7 @@ public class BlackjackTest {
 
     @DisplayName("최종 이익을 계산하는 테스트")
     @ParameterizedTest
-    @CsvSource(value = {"3,4","6,7"},delimiter = ',')
+    @CsvSource(value = {"3,4", "6,7"}, delimiter = ',')
     public void calculateFinalProfit(int one, int two) {
         Blackjack blackjack = new Blackjack();
         Player player1 = new Player("dahee", 10000);
