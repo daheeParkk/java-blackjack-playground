@@ -15,12 +15,12 @@ public class InputView {
     }
 
     public int inputVetAmount(String name) {
-        System.out.println(name + INPUT_BET_AMOUNT);
-        return sc.nextInt();
+        System.out.println(name + INPUT_BET_AMOUNT.getMessage());
+        return Integer.parseInt(sc.nextLine());
     }
 
     public String inputExtraCard(String name) {
-        System.out.println(name + INPUT_EXTRA_CARD);
+        System.out.println(name + INPUT_EXTRA_CARD.getMessage());
         return sc.nextLine();
     }
 }
