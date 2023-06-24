@@ -42,7 +42,10 @@ public class StreamStudyTest {
     @Test
     public void sumOverThreeAndDouble() throws Exception {
         numbers = Arrays.asList(3, 1, 6, 2, 4, 8);
-        long sum = StreamStudy.sumOverThreeAndDouble(numbers);
+        Conditional c = (number) -> {
+            return number>3;
+        };
+        long sum = StreamStudy.sumOverThreeAndDouble(numbers, c);
         assertThat(sum).isEqualTo(36);
     }
 }
