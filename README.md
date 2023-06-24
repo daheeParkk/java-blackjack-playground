@@ -29,7 +29,7 @@ ex) git checkout -b apply-feedback
 > #### Blackjack
 > - [x] 랜덤 카드 꺼내오기
 > - [x] 결과 계산하기
-> - [ ] 최종 수익 계산하기
+> - [x] 최종 수익 계산하기
 > #### InputView
 > - [ ] 이름 입력받기
 > - [ ] 배팅 금액 입력받기
