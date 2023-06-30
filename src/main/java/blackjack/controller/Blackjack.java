@@ -70,13 +70,31 @@ public class Blackjack {
     }
 
     public boolean isBlackJack(Player player, Dealer dealer) {
+        changeAceValue(player);
         if (isCondition(player) && !isCondition(dealer)) {
             player.multiplyProfit(BLACKJACK_MONEY);
             return true;
         }
-        if (isCondition(player) && isCondition(dealer)) {
+        if (isBlackJackWithDealer(player, dealer)) {
             return true;
         }
+        changeAcePreviousValue(player);
         return false;
+    }
+
+    private void changeAcePreviousValue(Player player) {
+        if(player.haveAce()) {
+            player.changeAcePreviousValue();
+        }
+    }
+
+    private void changeAceValue(Player player) {
+        if(player.haveAce()) {
+            player.changeAceValue();
+        }
+    }
+
+    private boolean isBlackJackWithDealer(Player player, Dealer dealer) {
+        return isCondition(player) && isCondition(dealer);
     }
 }

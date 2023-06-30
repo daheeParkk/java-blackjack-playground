@@ -13,7 +13,8 @@ public enum Card {
 
 
     private final String name;
-    private final int value;
+
+    private int value;
 
     Card(String name, int value) {
         this.name = name;
@@ -28,8 +29,16 @@ public enum Card {
         return name;
     }
 
+    private void setValue(int value) {
+        this.value = value;
+    }
+
     @Override
     public String toString() {
         return getName();
+    }
+
+    public void changeValue(int value) {
+        setValue(value);
     }
 }

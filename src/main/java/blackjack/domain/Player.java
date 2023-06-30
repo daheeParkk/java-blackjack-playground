@@ -43,4 +43,16 @@ public class Player {
     public void multiplyProfit(double blackjackMoney) {
         profit = profit * blackjackMoney;
     }
+
+    public boolean haveAce() {
+        return myCards.haveAce();
+    }
+
+    public void changeAceValue() {
+        myCards.changeAceValue();
+    }
+
+    public void changeAcePreviousValue() {
+        myCards.changeAcePreviousValue();
+    }
 }
