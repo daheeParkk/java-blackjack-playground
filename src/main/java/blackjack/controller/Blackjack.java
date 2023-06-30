@@ -8,6 +8,7 @@ import blackjack.util.RandomNumber;
 
 public class Blackjack {
     private static final double BLACKJACK_MONEY = 1.5;
+    private static final int BLACKJACK_CONDITION = 21;
 
     private static final Cards cards = new Cards();
 
@@ -62,11 +63,11 @@ public class Blackjack {
     }
 
     private boolean isCondition(Player player) {
-        return player.calculateResult() == 21;
+        return player.calculateResult() == BLACKJACK_CONDITION;
     }
 
     private boolean isCondition(Dealer dealer) {
-        return dealer.calculateResult() == 21;
+        return dealer.calculateResult() == BLACKJACK_CONDITION;
     }
 
     public boolean isBlackJack(Player player, Dealer dealer) {
@@ -96,5 +97,22 @@ public class Blackjack {
 
     private boolean isBlackJackWithDealer(Player player, Dealer dealer) {
         return isCondition(player) && isCondition(dealer);
+    }
+
+    public void checkAceValue(Player player) {
+        double oldValue = player.calculateResult();
+        changeAceValue(player);
+        double newValue = player.calculateResult();
+        if (oldValue <= BLACKJACK_CONDITION && newValue <= BLACKJACK_CONDITION) {
+            compareValue(player,oldValue, newValue);
+            return;
+        }
+        changeAcePreviousValue(player);
+    }
+
+    private void compareValue(Player player, double oldValue, double newValue) {
+        if (oldValue > newValue) {
+            changeAcePreviousValue(player);
+        }
     }
 }

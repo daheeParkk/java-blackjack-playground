@@ -70,6 +70,7 @@ public class Game {
                 check = false;
             }
         }
+        blackjack.checkAceValue(player);
     }
 
     private static void giveCards() {
