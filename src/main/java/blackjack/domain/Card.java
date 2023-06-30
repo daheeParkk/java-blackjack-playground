@@ -24,10 +24,11 @@ public enum Card {
         return value;
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
+    @Override
     public String toString() {
         return getName();
     }

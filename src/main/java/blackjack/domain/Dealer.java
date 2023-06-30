@@ -1,14 +1,14 @@
 package blackjack.domain;
 
 public class Dealer {
-    private static final int profit = 10000;
+    private static final double profit = 10000;
     private final PlayerCards myCards = new PlayerCards();
 
     public void addCard(Card card) {
         myCards.addCard(card);
     }
 
-    public int calculateResult() {
+    public double calculateResult() {
         return myCards.calculateResult();
     }
 
@@ -16,7 +16,7 @@ public class Dealer {
         return myCards.getCards();
     }
 
-    public int getProfit() {
+    public double getProfit() {
         return profit;
     }
 

@@ -30,13 +30,13 @@ public class OutputView {
         System.out.println(DEALER_ONE_MORE_TIME.getMessage());
     }
 
-    public void outputResult(String dealerCards, int dealerResult, String player1Name, String player1Cards, int player1Result, String player2Name, String player2Cards, int player2Result) {
+    public void outputResult(String dealerCards, double dealerResult, String player1Name, String player1Cards, double player1Result, String player2Name, String player2Cards, double player2Result) {
         System.out.println(DEALER + CARD + COLON + dealerCards + RESULT.getMessage() + dealerResult);
         System.out.println(player1Name + CARD + COLON + player1Cards + RESULT.getMessage() + player1Result);
         System.out.println(player2Name + CARD + COLON + player2Cards + RESULT.getMessage() + player2Result);
     }
 
-    public void outputFinalProfit(int dealerProfit, String player1Name, int player1Profit, String player2Name, int player2Profit) {
+    public void outputFinalProfit(double dealerProfit, String player1Name, double player1Profit, String player2Name, double player2Profit) {
         System.out.println(FINAL_PROFIT.getMessage());
         System.out.println(DEALER + COLON + dealerProfit);
         System.out.println(player1Name + COLON + player1Profit);

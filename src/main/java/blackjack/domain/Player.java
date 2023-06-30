@@ -5,7 +5,7 @@ public class Player {
     private final int bettingAmount;
     private final PlayerCards myCards = new PlayerCards();
 
-    private int profit;
+    private double profit;
 
     public Player(String name, int bettingAmount) {
         this.name = name;
@@ -16,7 +16,7 @@ public class Player {
         myCards.addCard(card);
     }
 
-    public int calculateResult() {
+    public double calculateResult() {
         return myCards.calculateResult();
     }
 
@@ -28,7 +28,7 @@ public class Player {
         profit = -bettingAmount;
     }
 
-    public int getProfit() {
+    public double getProfit() {
         return profit;
     }
 
@@ -38,5 +38,9 @@ public class Player {
 
     public String getCards() {
         return myCards.getCards();
+    }
+
+    public void multiplyProfit(double blackjackMoney) {
+        profit = profit * blackjackMoney;
     }
 }

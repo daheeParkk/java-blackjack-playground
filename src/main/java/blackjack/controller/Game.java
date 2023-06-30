@@ -25,6 +25,14 @@ public class Game {
         outputView.giveCards(player1.getName(), player2.getName());
         giveCards();
         outputView.outputFirstResult(dealer.getCards(), player1.getName(), player2.getName(), player1.getCards(), player2.getCards());
+        checkBlackJack();
+    }
+
+    private static void checkBlackJack() {
+        if (blackjack.isBlackJack(player1, dealer) || blackjack.isBlackJack(player2, dealer)) {
+            outputResult();
+            return;
+        }
         giveExtraCard();
         outputResult();
     }

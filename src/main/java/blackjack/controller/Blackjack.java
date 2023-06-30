@@ -6,9 +6,8 @@ import blackjack.domain.Dealer;
 import blackjack.domain.Player;
 import blackjack.util.RandomNumber;
 
-import java.util.Random;
-
 public class Blackjack {
+    private static final double BLACKJACK_MONEY = 1.5;
 
     private static final Cards cards = new Cards();
 
@@ -64,5 +63,20 @@ public class Blackjack {
 
     private boolean isCondition(Player player) {
         return player.calculateResult() == 21;
+    }
+
+    private boolean isCondition(Dealer dealer) {
+        return dealer.calculateResult() == 21;
+    }
+
+    public boolean isBlackJack(Player player, Dealer dealer) {
+        if (isCondition(player) && !isCondition(dealer)) {
+            player.multiplyProfit(BLACKJACK_MONEY);
+            return true;
+        }
+        if (isCondition(player) && isCondition(dealer)) {
+            return true;
+        }
+        return false;
     }
 }
