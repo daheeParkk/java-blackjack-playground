@@ -66,6 +66,7 @@ public class Game {
             if (answer.equals("y")) {
                 blackjack.giveCards(player);
                 outputView.outputPlayerResult(player.getName(), player.getCards());
+                check = blackjack.checkCondition(player);
             } else {
                 check = false;
             }

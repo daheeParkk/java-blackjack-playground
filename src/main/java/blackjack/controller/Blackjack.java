@@ -29,11 +29,29 @@ public class Blackjack {
     }
 
     public void calculateFinalProfit(Player player1, Player player2) {
+        if (isOverCondition(player1, player2)) {
+            return;
+        }
         checkMaxResult(player1, player2);
 
         if (!isCondition(player1) && !isCondition(player2)) {
             compareResult(player1, player2);
         }
+    }
+
+    private boolean isOverCondition(Player player1, Player player2) {
+        if (player1.getProfit() < 0 && player2.getProfit() < 0) {
+            return true;
+        }
+        if (player1.getProfit() < 0) {
+            player1.plusProfit();
+            return true;
+        }
+        if (player2.getProfit() < 0) {
+            player2.plusProfit();
+            return true;
+        }
+        return false;
     }
 
     private void checkMaxResult(Player player1, Player player2) {
@@ -114,5 +132,17 @@ public class Blackjack {
         if (oldValue > newValue) {
             changeAcePreviousValue(player);
         }
+    }
+
+    public boolean checkCondition(Player player) {
+        if (isExceedCondition(player)) {
+            player.minusProfit();
+            return false;
+        }
+        return true;
+    }
+
+    private boolean isExceedCondition(Player player) {
+        return player.calculateResult() > BLACKJACK_CONDITION;
     }
 }
