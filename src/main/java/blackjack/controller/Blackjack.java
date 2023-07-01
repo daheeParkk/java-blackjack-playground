@@ -40,15 +40,17 @@ public class Blackjack {
     }
 
     private boolean isOverCondition(Player player1, Player player2) {
-        if (player1.getProfit() < 0 && player2.getProfit() < 0) {
+        if (!checkCondition(player1) && !checkCondition(player2)) {
             return true;
         }
-        if (player1.getProfit() < 0) {
-            player1.plusProfit();
-            return true;
-        }
-        if (player2.getProfit() < 0) {
+        if(!checkCondition(player1)) {
+            player1.minusProfit();
             player2.plusProfit();
+            return true;
+        }
+        if (!checkCondition(player2)) {
+            player2.minusProfit();
+            player1.plusProfit();;
             return true;
         }
         return false;
